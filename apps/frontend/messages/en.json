@@ -12,6 +12,24 @@
   },
   "CheckoutPage": {
     "title": "Checkout",
-    "confirmOrder": "Confirm Order & Pay on Delivery"
+    "confirmOrder": "Confirm Order & Pay on Delivery",
+    "cartEmptyTitle": "Your cart is empty",
+    "cartEmptyMessage": "You can't check out with an empty cart.",
+    "shippingTitle": "Shipping Information",
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "phone": "Phone Number",
+    "city": "City / Governorate",
+    "address": "Address",
+    "orderSummaryTitle": "Your Order",
+    "total": "Total",
+    "processing": "Processing..."
+  },
+  "OrderConfirmationPage": {
+    "title": "Order Confirmed!",
+    "subtitle": "Your order has been placed successfully.",
+    "orderIdLabel": "Your Order ID is:",
+    "thankYou": "Thank you for shopping with us! You will receive a confirmation call shortly.",
+    "continueShopping": "Continue Shopping"
   }
 }

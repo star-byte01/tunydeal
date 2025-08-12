@@ -1,5 +1,6 @@
 import { Inter } from 'next/font/google';
 import { notFound } from 'next/navigation';
+import { NextIntlClientProvider, useMessages } from 'next-intl';
 import { locales } from '../../i18n';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
@@ -26,17 +27,21 @@ export default function RootLayout({ children, params: { locale } }: RootLayoutP
   // Validate that the incoming `locale` parameter is valid
   if (!locales.includes(locale)) notFound();
 
+  const messages = useMessages();
+
   return (
     <html lang={locale} dir={locale === 'ar' ? 'rtl' : 'ltr'}>
       <body className={`${inter.className} bg-background text-text-primary`}>
-        <ApolloProviderWrapper>
-          <div className="flex min-h-screen flex-col">
-            <Header />
-            <main className="flex-grow">{children}</main>
-            <Footer />
-          </div>
-          <CartDrawer />
-        </ApolloProviderWrapper>
+        <NextIntlClientProvider locale={locale} messages={messages}>
+          <ApolloProviderWrapper>
+            <div className="flex min-h-screen flex-col">
+              <Header />
+              <main className="flex-grow">{children}</main>
+              <Footer />
+            </div>
+            <CartDrawer />
+          </ApolloProviderWrapper>
+        </NextIntlClientProvider>
         <AnalyticsScripts />
       </body>
     </html>

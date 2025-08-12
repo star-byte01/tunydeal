@@ -12,6 +12,24 @@
   },
   "CheckoutPage": {
     "title": "الدفع",
-    "confirmOrder": "تأكيد الطلب والدفع عند الاستلام"
+    "confirmOrder": "تأكيد الطلب والدفع عند الاستلام",
+    "cartEmptyTitle": "عربة التسوق فارغة",
+    "cartEmptyMessage": "لا يمكنك الدفع وعربة التسوق فارغة.",
+    "shippingTitle": "معلومات الشحن",
+    "firstName": "الاسم الأول",
+    "lastName": "اسم العائلة",
+    "phone": "رقم الهاتف",
+    "city": "المدينة / المحافظة",
+    "address": "العنوان",
+    "orderSummaryTitle": "ملخص طلبك",
+    "total": "المجموع",
+    "processing": "جاري المعالجة..."
+  },
+  "OrderConfirmationPage": {
+    "title": "تم تأكيد الطلب!",
+    "subtitle": "تم تقديم طلبك بنجاح.",
+    "orderIdLabel": "رقم طلبك هو:",
+    "thankYou": "شكرا لتسوقك معنا! ستتلقى مكالمة تأكيد قريبًا.",
+    "continueShopping": "متابعة التسوق"
   }
 }
