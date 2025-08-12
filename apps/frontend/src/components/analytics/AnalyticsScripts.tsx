@@ -12,7 +12,7 @@ const ENABLE_ANALYTICS = process.env.NEXT_PUBLIC_ENABLE_ANALYTICS === 'true';
 // Helper for page views
 export const pageview = (url: string) => {
   if (ENABLE_ANALYTICS && GA4_MEASUREMENT_ID) {
-    window.gtag('config', GA4_MEASUREMENT_ID, {
+    window.gtag?.('config', GA4_MEASUREMENT_ID, {
       page_path: url,
     });
   }

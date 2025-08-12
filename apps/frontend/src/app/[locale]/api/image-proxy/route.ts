@@ -18,35 +18,37 @@ export async function GET(req: NextRequest) {
     }
     const imageBuffer = Buffer.from(await imageResponse.arrayBuffer());
 
-    // Path to the watermark. Assumes 'watermark.png' is in the 'public' directory.
-    const watermarkPath = path.join(process.cwd(), 'public/watermark.png');
-
-    // Create a placeholder watermark if it doesn't exist.
-    // This is a workaround for the agent environment where I can't create image files.
-    // In a real project, the watermark.png would be provided.
-    const watermarkBuffer = await getWatermarkBuffer(watermarkPath);
+    // Get the watermark buffer
+    const watermarkBuffer = await getWatermarkBuffer();
 
     // Apply the watermark using Sharp
     const watermarkedImageBuffer = await sharp(imageBuffer)
       .composite([
         {
           input: watermarkBuffer,
-          gravity: 'southeast', // Position in the bottom-right corner
-          // You can add padding by creating a slightly larger transparent canvas
-          // or by pre-processing the watermark image to have padding.
+          gravity: 'southeast',
         },
       ])
-      .toFormat('webp', { quality: 80 }) // Convert to a modern, efficient format
+      .toFormat('webp', { quality: 80 })
       .toBuffer();
 
+    // ------------------------------------------------------------------
+    // --- THE FINAL FIX: Create a Uint8Array from the Buffer ---
+    // ------------------------------------------------------------------
+    // This creates a standard JavaScript Uint8Array, which is a view
+    // on the buffer's data. This type is 100% compatible with the
+    // web-standard NextResponse constructor and resolves the type error.
+    const finalImage = new Uint8Array(watermarkedImageBuffer);
+
     // Return the processed image
-    return new NextResponse(watermarkedImageBuffer, {
+    return new NextResponse(finalImage, {
       status: 200,
       headers: {
         'Content-Type': 'image/webp',
         'Cache-Control': 'public, max-age=31536000, immutable',
       },
     });
+
   } catch (error) {
     console.error('Image processing error:', error);
     return new NextResponse('Error processing image', { status: 500 });
@@ -54,9 +56,7 @@ export async function GET(req: NextRequest) {
 }
 
 // Helper function to create a dummy watermark buffer
-async function getWatermarkBuffer(filePath: string) {
-    // In a real env, you'd use fs.readFileSync(filePath).
-    // Here we create a dummy 50x50 transparent png with a small pink dot.
+async function getWatermarkBuffer() {
     const svg = `
         <svg width="100" height="50" xmlns="http://www.w3.org/2000/svg">
             <rect width="100" height="50" fill="rgba(0,0,0,0.2)" />
