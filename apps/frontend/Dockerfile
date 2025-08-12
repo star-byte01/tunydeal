@@ -1,13 +1,13 @@
 # Stage 1: Builder
-FROM node:18-alpine AS builder
+FROM node:20-alpine AS builder
 
 # Set working directory
 WORKDIR /app
 
 # Install dependencies
-# Use `npm ci` for faster, more reliable installs in CI environments
+# Using `npm install` as a workaround for out-of-sync lockfile issues.
 COPY package.json package-lock.json ./
-RUN npm ci
+RUN npm install
 
 # Copy source code
 COPY . .
@@ -21,7 +21,7 @@ COPY . .
 RUN npm run build
 
 # Stage 2: Runner
-FROM node:18-alpine AS runner
+FROM node:20-alpine AS runner
 
 WORKDIR /app
 
