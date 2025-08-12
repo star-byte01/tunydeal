@@ -1,0 +1,17 @@
+{
+  "Header": {
+    "allProducts": "كل المنتجات",
+    "categories": "الفئات"
+  },
+  "ProductCard": {
+    "payOnDelivery": "الدفع عند الاستلام"
+  },
+  "ProductListingPage": {
+    "title": "كل المنتجات",
+    "description": "تصفح مجموعتنا من أحدث وأفضل العروض."
+  },
+  "CheckoutPage": {
+    "title": "الدفع",
+    "confirmOrder": "تأكيد الطلب والدفع عند الاستلام"
+  }
+}

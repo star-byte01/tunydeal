@@ -1,0 +1,17 @@
+{
+  "Header": {
+    "allProducts": "Tous les produits",
+    "categories": "Catégories"
+  },
+  "ProductCard": {
+    "payOnDelivery": "Payer à la livraison"
+  },
+  "ProductListingPage": {
+    "title": "Tous les produits",
+    "description": "Parcourez notre collection des dernières et meilleures offres."
+  },
+  "CheckoutPage": {
+    "title": "Paiement",
+    "confirmOrder": "Confirmer la commande et payer à la livraison"
+  }
+}

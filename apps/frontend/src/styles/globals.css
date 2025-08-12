@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Design Tokens */
+  --color-primary: 346.8 96.1% 53.7%; /* TunyDeal Pink */
+  --color-secondary: 210 40% 96.1%; /* Light Gray */
+  --color-accent: 198.3 100% 41.2%; /* Bright Blue */
+  --color-text-primary: 222.2 84% 4.9%; /* Dark Blue/Black */
+  --color-text-secondary: 220 13% 46%; /* Gray */
+  --color-background: 0 0% 100%; /* White */
+  --color-border: 214.3 31.8% 91.4%;
+
+  /* Dark Mode Colors (optional, but good practice) */
+  --dark-color-primary: 346.8 96.1% 53.7%;
+  --dark-color-secondary: 215 28% 17%;
+  --dark-color-accent: 198.3 100% 41.2%;
+  --dark-color-text-primary: 210 40% 98%;
+  --dark-color-text-secondary: 215 14% 65%;
+  --dark-color-background: 222.2 84% 4.9%;
+  --dark-color-border: 217.2 32.6% 17.5%;
+
+  --font-sans: "Inter", sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-background text-text-primary;
+    font-family: var(--font-sans);
+  }
+}

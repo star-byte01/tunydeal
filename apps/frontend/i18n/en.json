@@ -1,0 +1,17 @@
+{
+  "Header": {
+    "allProducts": "All Products",
+    "categories": "Categories"
+  },
+  "ProductCard": {
+    "payOnDelivery": "Pay on Delivery"
+  },
+  "ProductListingPage": {
+    "title": "All Products",
+    "description": "Browse our collection of the latest and greatest deals."
+  },
+  "CheckoutPage": {
+    "title": "Checkout",
+    "confirmOrder": "Confirm Order & Pay on Delivery"
+  }
+}

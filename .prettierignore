@@ -1,0 +1,24 @@
+# Dependencies
+node_modules
+.yarn
+
+# Build outputs
+.next
+out
+build
+dist
+
+# Caches
+.cache
+.vercel
+
+# Logs
+*.log
+
+# Documentation
+CHANGELOG.md
+
+# Other
+package-lock.json
+yarn.lock
+pnpm-lock.yaml

@@ -1,0 +1,54 @@
+{
+  "data": {
+    "__schema": {
+      "queryType": { "name": "Query" },
+      "mutationType": { "name": "Mutation" },
+      "subscriptionType": null,
+      "types": [
+        {
+          "kind": "OBJECT",
+          "name": "Query",
+          "description": "The root query type.",
+          "fields": [
+            {
+              "name": "products",
+              "description": "List of the shop's products.",
+              "args": [],
+              "type": {
+                "kind": "OBJECT",
+                "name": "ProductCountableConnection",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            }
+          ]
+        },
+        {
+            "kind": "OBJECT",
+            "name": "Mutation",
+            "description": "The root mutation type.",
+            "fields": []
+        },
+        {
+          "kind": "OBJECT",
+          "name": "ProductCountableConnection",
+          "fields": [
+            {
+              "name": "edges",
+              "type": {
+                "kind": "LIST",
+                "name": null,
+                "ofType": {
+                  "kind": "OBJECT",
+                  "name": "Product",
+                  "ofType": null
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
