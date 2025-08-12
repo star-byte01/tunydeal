@@ -12,6 +12,24 @@
   },
   "CheckoutPage": {
     "title": "Paiement",
-    "confirmOrder": "Confirmer la commande et payer à la livraison"
+    "confirmOrder": "Confirmer la commande et payer à la livraison",
+    "cartEmptyTitle": "Votre panier est vide",
+    "cartEmptyMessage": "Vous ne pouvez pas passer à la caisse avec un panier vide.",
+    "shippingTitle": "Informations de livraison",
+    "firstName": "Prénom",
+    "lastName": "Nom de famille",
+    "phone": "Numéro de téléphone",
+    "city": "Ville / Gouvernorat",
+    "address": "Adresse",
+    "orderSummaryTitle": "Résumé de votre commande",
+    "total": "Total",
+    "processing": "En cours..."
+  },
+  "OrderConfirmationPage": {
+    "title": "Commande confirmée !",
+    "subtitle": "Votre commande a été passée avec succès.",
+    "orderIdLabel": "Votre numéro de commande est :",
+    "thankYou": "Merci pour vos achats ! Vous recevrez un appel de confirmation sous peu.",
+    "continueShopping": "Continuer les achats"
   }
 }

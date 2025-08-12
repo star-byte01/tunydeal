@@ -1,6 +1,7 @@
 "use client";
 
-import Link from 'next/link';
+import { useTranslations } from 'next-intl';
+import { Link } from '@/navigation';
 import { useCartStore } from '@/lib/store/cart';
 import MegaMenu from './MegaMenu';
 
@@ -14,6 +15,7 @@ const CartIcon = () => (
 export default function Header() {
   const { openDrawer, getTotalItems } = useCartStore();
   const totalItems = getTotalItems();
+  const t = useTranslations('Header');
 
   return (
     <header className="sticky top-0 z-40 bg-white/80 shadow-md backdrop-blur-md">
@@ -23,10 +25,9 @@ export default function Header() {
             TunyDeal
           </Link>
         </div>
-        <nav className="hidden md:flex">
-          {/* Placeholder for Mega Menu */}
+        <nav className="hidden items-center md:flex">
           <Link href="/products" className="px-4 py-2 text-text-secondary hover:text-primary">
-            All Products
+            {t('allProducts')}
           </Link>
           <MegaMenu />
         </nav>
